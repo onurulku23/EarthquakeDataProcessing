@@ -806,7 +806,7 @@ def predictedModifiedMercalliIntensity(path):
     files=getFiles(path)
     SList=[]
     a=5.919
-    b=0.844
+    b=0.84
     r=-0.997
     s=-0.105
     vS30List=list()
