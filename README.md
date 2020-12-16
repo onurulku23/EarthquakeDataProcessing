@@ -7,3 +7,11 @@ I am studying Earthquake Engineering, and we had the assignment to process Samos
 In that project, I downloaded raw earthquake data for each station from[AFAD](https://tadas.afad.gov.tr/) and implemented baseline correction for each station and each component of the earthquake. In the codes, everything that I did can be seen easily. Besides, I prepared a report to share my opinions, comments, and information. 
 
 I am planning to develop this bunch of codes whenever I learn new information. Also, if you would like to contribute these codes, I will be grateful.
+
+
+## References
+
+1-	Tselentis and Danciu (2008) Empirical Relationships between Modified Mercalli Intensity and Engineering Ground-Motion Parameters in Greece, Bulletin of the Seismological Society of America, Vol. 98, No. 4, pp. 1863–1875, August 2008, doi: 10.1785/0120070172
+
+2-	Sandıkkaya and Akkar (2016), Cumulative absolute velocity, Arias intensity and significant duration predictive models from a pan-European strong-motion dataset, Bull Earthquake Eng DOI 10.1007/s10518-016-0066-6 
+
