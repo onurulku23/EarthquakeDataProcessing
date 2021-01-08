@@ -918,49 +918,37 @@ def residualsGraph(path):
     fig, axs = plt.subplots(2,2,figsize=(20,10))
     fig.subplots_adjust(hspace=0.23, wspace=0.19, left=0.04, right=0.98, bottom=0.06, top=0.95)
 
-    gradient, intercept, r_value, p_value, std_err=linregress(rEpiList,residualAI)
-    x1=np.linspace(0,100,500)
-    y1=gradient*x1+intercept
     axs[0,0].scatter(rEpiList, residualAI, label="Residual AI")
-    axs[0,0].plot(x1,y1, '-r', label="Residual AI=" + str(round(gradient,3)) + "Repi" + "+" + str(round(intercept,3)))
+    axs[0,0].axhline(y=0, color='black', linestyle='--')
     axs[0,0].set_xlabel("Epicenteral Distance (km)")
     axs[0,0].set_ylabel("Residual AI")
     axs[0,0].set_ylim(-3,3)
     axs[0,0].set_title("Residual AI Graphs", fontsize=12, color="red")
     axs[0,0].legend()
 
-    gradient, intercept, r_value, p_value, std_err=linregress(vS30List,residualAI)
-    x1=np.linspace(0,1200,5000)
-    y1=gradient*x1+intercept
     axs[1,0].scatter(vS30List, residualAI, label="Residual AI")
-    axs[1,0].plot(x1,y1, '-r', label="Residual AI=" + str(round(gradient,3)) + "Vs30" + "+" + str(round(intercept,3)))
+    axs[1,0].axhline(y=0, color='black', linestyle='--')
     axs[1,0].set_xlabel("Vs30 (cm/s)")
     axs[1,0].set_ylabel("Residual AI")
-    axs[1,0].set_ylim(-3,2)
+    axs[1,0].set_ylim(-3,3)
     axs[1,0].legend()
 
-    gradient, intercept, r_value, p_value, std_err=linregress(rEpiList,residualCAV)
-    x1=np.linspace(0,100,500)
-    y1=gradient*x1+intercept
     axs[0,1].scatter(rEpiList, residualCAV, label="Residual CAV")
-    axs[0,1].plot(x1,y1, '-r', label="Residual CAV=" + str(round(gradient,3)) + "Repi" + "+" + str(round(intercept,3)))
+    axs[0,1].axhline(y=0, color='black', linestyle='--')
     axs[0,1].set_xlabel("Epicenteral Distance (km)")
     axs[0,1].set_ylabel("Residual CAV")
-    axs[0,1].set_ylim(-2,1)
+    axs[0,1].set_ylim(-3,3)
     axs[0,1].set_title("Residual CAV Graphs", fontsize=12, color="red")
     axs[0,1].legend()
 
-    gradient, intercept, r_value, p_value, std_err=linregress(vS30List,residualCAV)
-    x1=np.linspace(0,1200,5000)
-    y1=gradient*x1+intercept
     axs[1,1].scatter(vS30List, residualCAV, label="Residual CAV")
-    axs[1,1].plot(x1,y1, '-r', label="Residual CAV=" + str(round(gradient,3)) + "Vs30" + "+" + str(round(intercept,3)))
+    axs[1,1].axhline(y=0, color='black', linestyle='--')
     axs[1,1].set_xlabel("Vs30 (cm/s)")
     axs[1,1].set_ylabel("Residual CAV")
-    axs[1,1].set_ylim(-2,1)
+    axs[1,1].set_ylim(-3,3)
     axs[1,1].legend()
     # plt.show()
-    # plt.savefig("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/Plots" + "/" + "Residual" + ".png")
+    plt.savefig("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/Plots" + "/" + "Residual" + ".png")
 
 
 #############################################-- INSTRUMENTAL INTENSITY RESIDUAL --##################################################
@@ -987,21 +975,16 @@ def residualIntensity(path):
     fig, (ax1, ax2)=plt.subplots(2,figsize=(10,10))
     fig.suptitle("Residual Intensity ", fontsize=14, color="red")
 
-    gradient, intercept, r_value, p_value, std_err=linregress(rEpiList,residualMMIList)
-    x1=np.linspace(0,100,500)
-    y1=gradient*x1+intercept
     ax1.scatter(rEpiList, residualMMIList, label="Residual Intensity")
-    ax1.plot(x1,y1, '-r', label="Residual Intensity=" + str(round(gradient,3)) + "Repi" + "+" + str(round(intercept,3)))
+    ax1.axhline(y=0, color='black', linestyle='--')
     ax1.set_xlabel("Epicenteral Distance (km)")
     ax1.set_ylabel("Residual Intensity")
     ax1.set_ylim(-1,1)
     ax1.legend()
 
-    gradient, intercept, r_value, p_value, std_err=linregress(vS30List,residualMMIList)
-    x1=np.linspace(0,1200,5000)
-    y1=gradient*x1+intercept
+
     ax2.scatter(vS30List, residualMMIList, label="Residual Intensity")
-    ax2.plot(x1,y1, '-r', label="Residual Intensity=" + str(round(gradient,3)) + "Vs30" + "+" + str(round(intercept,3)))
+    ax2.axhline(y=0, color='black', linestyle='--')
     ax2.set_xlabel("Vs30 (cm/s)")
     ax2.set_ylabel("Residual Intensity")
     ax2.set_ylim(-1,1)
@@ -1015,7 +998,7 @@ def residualIntensity(path):
 
 
 # residualIntensity("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/data")
-# residualsGraph("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/data")
+residualsGraph("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/data")
 # plotSigDur("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/data")
 # modifiedMercalliIntensity("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/data")
 # BaselineCorrection("/Volumes/Elements/Dersler/Master Courses/EQE 520/Assignment 1/Python/data/GuestUser_RawAcc_20201030115124_0905/20201030115124_0905_mp_RawAcc_E.asc")
